@@ -24,7 +24,7 @@ mongoose.connect(process.env.database)
 
 
 app.get("/", (req, res)=>{
-    res.sendFile(path.join(__dirname, "views", DOMRectList.html))
+    res.sendFile(path.join(__dirname, "views", "docs.html"))
 })
 
 
