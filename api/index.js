@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const app = express();
 app.use(express.json());
 
-const Place = require("./models/place");
+const Place = require("../models/place");
 
 mongoose.connect(process.env.database)
 .then(()=>{
@@ -50,6 +50,4 @@ app.get("/getplaces/:class/:city", async (req, res)=>{
 
 
 // =============
-app.listen(3000, ()=>{
-    console.log("I am listening in port 3000");
-})
+module.exports = app
