@@ -4,65 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentation</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body style="display: flex;justify-content: center;align-items: center;">
     <div>
         <p>
-                        _______________________________Documentation___________________________________
+                        _______________________________Documentation___________________________________ <br> <br> <br> <br>
 
 
 
-            ====================  Schema ====================
+            ====================  Schema ==================== <br><br>
 
-            {
-                title: String,
-                about: String,
-                images: {
-                    head: String,         //the main image
-                    allImages: Array      //the swiper images
-                },
-                video: String,
-                openingHours: String,    
+            {<br>
+                title: String,<br>
+                about: String,<br>
+                images: {<br>
+                    head: String,         //the main image<br>
+                    allImages: Array      //the swiper images<br>
+                },<br>
+                video: String,<br>
+                openingHours: String,    <br>
                 location: String,
-                government: String,        //  [Cairo, Alexandria, Aswan, Fayoum, Giza, Luxor, Red_Sea]
-                price: String,
-                vibe: [String],            //  [creative, social, organized, analytical]
-                ticket: String,
-                tags: [String],
-                rating: {
-                    rate: Number,
-                    usersRated: Number
-                }
-            }
+                government: String,        //  [Cairo, Alexandria, Aswan, Fayoum, Giza, Luxor, Red_Sea]<br>
+                price: String,<br>
+                vibe: [String],            //  [creative, social, organized, analytical]<br>
+                ticket: String,<br>
+                tags: [String],<br>
+                rating: {<br>
+                    rate: Number,<br>
+                    usersRated: Number<br>
+                }<br>
+            }<br><br>
 
-            //////////////////////////////////////////////////
-
-
-            ====================  Endpoints  ====================
+            //////////////////////////////////////////////////<br><br><br>
 
 
-            --- Frist endpoint ---
-
-            "/getplaces" :
-                returns all places in database
+            ====================  Endpoints  ====================<br><br><br>
 
 
-            --- Secound endpoint ---
+            --- Frist endpoint ---<br><br>
 
-            "/getplaces/:class" :
-                returns all places in a spacefic personality    [creative, social, organized, analytical]
+            "/getplaces" :<br>
+                returns all places in database<br><br><br>
+
+
+            --- Secound endpoint ---<br><br>
+
+            "/getplaces/:class" :<br>
+                returns all places in a spacefic personality    [creative, social, organized, analytical]<br><br><br>
                 
 
-            --- Third endpoint ---
+            --- Third endpoint ---<br><br>
 
-            "/getplaces/:class/:city" :
-                returns all places in spacefic personality and government
+            "/getplaces/:class/:city" :<br>
+                returns all places in spacefic personality and government<br><br><br>
 
 
-            --- Forth endpoint ---
+            --- Forth endpoint ---<br><br>
 
-            "/getplaces/any/:city"
-                returns all places in spacefic government
+            "/getplaces/any/:city"<br>
+                returns all places in spacefic government<br>
 
         </p>
     </div>
