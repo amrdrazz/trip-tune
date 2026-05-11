@@ -3,6 +3,8 @@ const path = require("path")
 const express = require("express");
 const mongoose = require("mongoose");
 
+app.use(express.static("public"));
+
 const app = express();
 app.use(express.json());
 
