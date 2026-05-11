@@ -1,0 +1,55 @@
+_______________________________Documentation___________________________________
+
+
+
+====================  Schema ====================
+
+{
+    title: String,
+    about: String,
+    images: {
+        head: String,         //the main image
+        allImages: Array      //the swiper images
+    },
+    video: String,
+    openingHours: String,    
+    location: String,
+    government: String,        //  [Cairo, Alexandria, Aswan, Fayoum, Giza, Luxor, Red_Sea]
+    price: String,
+    vibe: [String],            //  [creative, social, organized, analytical]
+    ticket: String,
+    tags: [String],
+    rating: {
+        rate: Number,
+        usersRated: Number
+    }
+}
+
+//////////////////////////////////////////////////
+
+
+====================  Endpoints  ====================
+
+
+--- Frist endpoint ---
+
+"/getplaces" :
+    returns all places in database
+
+
+--- Secound endpoint ---
+
+"/getplaces/:class" :
+    returns all places in a spacefic personality    [creative, social, organized, analytical]
+    
+
+--- Third endpoint ---
+
+"/getplaces/:class/:city" :
+    returns all places in spacefic personality and government
+
+
+--- Forth endpoint ---
+
+"/getplaces/any/:city"
+    returns all places in spacefic government
