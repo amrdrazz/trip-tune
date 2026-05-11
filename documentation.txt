@@ -14,7 +14,7 @@ _______________________________Documentation___________________________________
     video: String,
     openingHours: String,    
     location: String,
-    government: String,        //  [Cairo, Alexandria, Aswan, Fayoum, Giza, Luxor, Red_Sea]
+    government: String,        //  [cairo, Alexandria, Aswan, Fayoum, Giza, Luxor, Red_Sea]
     price: String,
     vibe: [String],            //  [creative, social, organized, analytical]
     ticket: String,
