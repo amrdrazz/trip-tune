@@ -22,6 +22,11 @@ mongoose.connect(process.env.database)
 //  Endpoints =========
 
 
+app.get("/", (req, res)=>{
+    res.sendFile(path.join(__dirname, "views", DOMRectList.html))
+})
+
+
 app.get("/getplaces", async (req, res)=>{
     const places = await Place.find();
     res.send(places)
