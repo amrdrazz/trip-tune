@@ -15,8 +15,9 @@ mongoose.connect(process.env.MONGO_URL, {
     console.log("Connected successfuly");
 })
 .catch((error)=>{
-    console.log("error with connecting database/ " + error+process.env.MONGO_URL);
+    console.log("error with connecting database/ " + error + 'url='+process.env.MONGO_URL + 'test=' + Object.keys(process.env));
 });
+
 
 
 
