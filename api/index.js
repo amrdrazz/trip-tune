@@ -7,10 +7,7 @@ app.use(express.json());
 
 const Place = require("../models/place");
 
-mongoose.connect(process.env.database, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(process.env.database)
 .then(()=>{
     console.log("Connected successfuly");
 })
