@@ -125,7 +125,8 @@ app.post('/addUser',async (req, res)=>{
             password: hashedPassword,
             personality,
             verificationCode: code,
-            verified: false
+            verified: false,
+            createdAt: Date.now()
         })
 
         await sendEmail(email, code)

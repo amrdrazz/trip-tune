@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const date = new Date;
-
 const userSchema = new Schema({
     email:{
         type:String,
@@ -21,10 +19,7 @@ const userSchema = new Schema({
     personality: String,
     verificationCode: Number,
     verified: Boolean,
-    createdAt:{
-        type:Date,
-        default:date.now()
-    }
+    createdAt: Date
 });
 
 
