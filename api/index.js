@@ -142,7 +142,7 @@ app.post('/addUser',async (req, res)=>{
 })
 
 
-app.post('/verifyCode',(req, res) => {
+app.post('/verifyCode',async (req, res) => {
     try{
         const {email, code} = req.body;
 
