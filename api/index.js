@@ -235,7 +235,7 @@ app.get('/cleanup-users', async(req,res)=>{
     if(req.headers['x-vercel-cron'] !== '1'){
         return res.sendStatus(401)
     }
-    
+
     try{
 
         const deletedUsers = await User.deleteMany({
