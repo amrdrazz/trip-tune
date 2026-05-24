@@ -19,7 +19,10 @@ const userSchema = new Schema({
     personality: String,
     verificationCode: Number,
     verified: Boolean,
-    createdAt: Date
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 });
 
 

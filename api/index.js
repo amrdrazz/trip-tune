@@ -125,8 +125,7 @@ app.post('/addUser',async (req, res)=>{
             password: hashedPassword,
             personality,
             verificationCode: code,
-            verified: false,
-            createdAt: Date.now()
+            verified: false
         })
 
         await sendEmail(email, code)
@@ -215,6 +214,12 @@ app.post('/login', async (req, res) => {
             password,
             user.password
         )
+
+        if(!matched){
+            return res.status(401).json({
+                message:"Wrong password"
+            })
+        }
 
         return res.status(200).json({
             message:"Login successful"
