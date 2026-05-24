@@ -1,10 +1,17 @@
 require("dotenv").config();
 const path = require("path")
 const express = require("express");
+const app = express();
+
+const cors = require('cors')
+
+app.use(cors({
+    origin:"http://localhost:5173"
+}))
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 
