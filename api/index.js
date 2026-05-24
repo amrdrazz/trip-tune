@@ -230,5 +230,35 @@ app.post('/login', async (req, res) => {
 })
 
 
+app.get('/cleanup-users', async(req,res)=>{
+
+    if(req.headers['x-vercel-cron'] !== '1'){
+        return res.sendStatus(401)
+    }
+    
+    try{
+
+        const deletedUsers = await User.deleteMany({
+            verified:false,
+            createdAt:{
+                $lt:new Date(
+                    Date.now() - 5*60*1000
+                )
+            }
+        })
+
+        return res.status(200).json({
+            deleted: deletedUsers.deletedCount
+        })
+
+    }catch(error){
+
+        return res.status(500).json({
+            message:error.message
+        })
+    }
+})
+
+
 // =============
 module.exports = app

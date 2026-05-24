@@ -18,7 +18,11 @@ const userSchema = new Schema({
     },
     personality: String,
     verificationCode: Number,
-    verified: Boolean
+    verified: Boolean,
+    createdAt:{
+        type:Date,
+        default:Date.now()
+    }
 });
 
 
