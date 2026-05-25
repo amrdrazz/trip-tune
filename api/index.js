@@ -21,13 +21,28 @@ const User = require("../models/user");
 const sendEmail = require('../sendEmail');
 const { log } = require("console");
 
-mongoose.connect(process.env.database)
-.then(()=>{
-    console.log("Connected successfuly");
-})
-.catch((error)=>{
-    console.log("error with connecting database/ " + error + ' url='+process.env.database + ' test=' + Object.keys(process.env));
-});
+const connectDB = require('../connctDB');
+
+async function start(){
+
+    try{
+        await connectDB();
+
+        console.log("Connected successfuly");
+
+    }catch(error){
+
+        console.log(
+            "error with connecting database/ "
+            + error
+            + " url="
+            + process.env.database
+        );
+    }
+
+}
+
+start();
 
 
 
