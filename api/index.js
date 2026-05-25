@@ -9,7 +9,6 @@ app.use(cors({
     origin:"http://localhost:5173"
 }))
 
-const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 app.use(express.json());
@@ -19,9 +18,8 @@ const Place = require("../models/place");
 const User = require("../models/user");
 
 const sendEmail = require('../sendEmail');
-const { log } = require("console");
 
-const connectDB = require('../connctDB');
+const connectDB = require('../connectDB');
 
 async function start(){
 
