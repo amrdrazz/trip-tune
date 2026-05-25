@@ -103,6 +103,8 @@ app.get("/getplaces/:personality/:city", async (req, res)=>{
 
 app.post('/addUser',async (req, res)=>{
     try{
+
+        console.log('request arrived')
         const code = Math.floor(1000 + Math.random() * 9000)
         const {email, username, password, personality} = req.body;
 
@@ -141,7 +143,11 @@ app.post('/addUser',async (req, res)=>{
             verified: false
         })
 
+        console.log('sending email')
+
         await sendEmail(email, code)
+
+        console.log('saving user')
 
         await newUser.save()
 
@@ -150,6 +156,8 @@ app.post('/addUser',async (req, res)=>{
         })
 
     }catch(error){
+        console.log('full error')
+
         console.log(error)
 
         res.status(500).json({
