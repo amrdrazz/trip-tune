@@ -5,6 +5,8 @@ const app = express();
 
 const cors = require('cors')
 
+const jwt = require('jsonwebtoken') 
+
 app.use(cors({
     origin:"http://localhost:5173"
 }))
@@ -242,9 +244,21 @@ app.post('/login', async (req, res) => {
             })
         }
 
+        const token = jwt.sign(
+            {
+                userId: user._id,
+                email: user.email
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: '7d'
+            }
+        );
+
         return res.status(200).json({
-            message:"Login successful"
-        })
+            message:"Login successful",
+            token
+        });
 
 
     }catch(error){
