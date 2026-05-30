@@ -14,7 +14,7 @@
   ],
   "crons":[
     {
-      "path":"/cleanup-users",
+      "path":"api/cleanup-users",
       "schedule":"*/5 * * * *"
     }
   ]
