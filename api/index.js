@@ -1,6 +1,7 @@
 require("dotenv").config();
 const path = require("path")
 const express = require("express");
+const JWT = require('jsonwebtoken')
 const app = express();
 
 const cors = require('cors')
@@ -195,8 +196,19 @@ app.post('/verifyCode',async (req, res) => {
 
         await user.save()
 
+        const token = JWT.sign(
+            {
+                id: user.id,
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: '7d'
+            }
+        )
+
         return res.status(200).json({
-            message:"Account verified"
+            message:"Account verified",
+            token: token
         })
 
     }catch(error){
