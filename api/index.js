@@ -1,4 +1,3 @@
-const serverless = require('serverless-http');
 require("dotenv").config();
 const path = require("path")
 const express = require("express");
@@ -315,4 +314,4 @@ app.get('/cleanup-users', async(req,res)=>{
 
 
 // =============
-module.exports = serverless(app);
+module.exports = app;
