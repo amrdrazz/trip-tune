@@ -9,7 +9,7 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken') 
 
 app.use(cors({
-    origin:"http://localhost:5173"
+    origin:"*"
 }))
 
 const bcrypt = require("bcrypt");
