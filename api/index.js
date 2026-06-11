@@ -64,7 +64,7 @@ app.get("/", (req, res)=>{
 app.get("/getplaces", async (req, res)=>{
     try{
         const places = await Place.find();
-        res.send(places)
+        res.json(places)
     }catch(error){
         console.log(error)
     }
@@ -75,7 +75,7 @@ app.get("/getplaces/:personality", async (req, res)=>{
         const places = await Place.find({
             vibe: req.params.personality
         });
-        res.send(places)
+        res.json(places)
     }catch(error){
         console.log(error)
     }
@@ -94,7 +94,7 @@ app.get("/getplaces/:personality/:city", async (req, res)=>{
                 government: req.params.city
             });
         }
-        res.send(places)
+        res.json(places)
     }catch(error){
         console.log(error)
     }
