@@ -5,7 +5,7 @@ const placeSchema = new Schema({
     title: String,
     about: String,
     images: {
-        head: String,         //the main image
+        headImg: String,         //the main image
         allImages: Array      //the swiper images
     },
     video: String,
