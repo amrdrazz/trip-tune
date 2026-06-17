@@ -14,6 +14,15 @@ app.use(cors({
 
 const bcrypt = require("bcrypt");
 
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (err) {
+        next(err);
+    }
+});
+
 app.use(express.json());
 app.use(express.static("public"));
 
