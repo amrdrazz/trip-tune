@@ -13,6 +13,7 @@ app.use(cors({
 }))
 
 const bcrypt = require("bcrypt");
+const connectDB = require('../connectDB');
 
 app.use(async (req, res, next) => {
     try {
@@ -31,7 +32,6 @@ const User = require("../models/user");
 
 const sendEmail = require('../sendEmail');
 
-const connectDB = require('../connectDB');
 
 async function start(){
 
@@ -313,11 +313,6 @@ app.get('/cleanup-users', async(req,res)=>{
             message:error.message
         })
     }
-})
-
-
-app.listen(3000,  () => {
-    console.log('listening')
 })
 
 
